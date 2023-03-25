@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>redherring</title>
+    <link rel="stylesheet" href="ui.css">
+</head>
+
+<body>
+    <ul class="rh-tabs">
+        <li class="active"><a href="#tab2">Whitelist</a></li>
+        <li><a href="#tab1">About</a></li>
+    </ul>
+    <div id="tab2" class="rh-tab-content active">
+        <p>Add websites to the whitelist (one per line):</p>
+        <textarea class="rh-textarea" id="rh-whitelist-storage-id" wrap="off" autofocus="true"
+            placeholder="example.com&#10;anothersite.org"></textarea>
+    </div>
+    <div id="tab1" class="rh-tab-content">
+        <h3><img src="./icons/redherring.svg" height=25> redherring</h3>
+        <p>
+            Add an indicator to your browser when hovering over anchor elements to point out the uri characters that are
+            not ascii letters.</br></br>
+            Top level domain is always colored orange to bring attention to it, and only the https protocol is
+            considered valid.</br></br>
+            Create a whitelist by adding the 'domain.tld' entries on separate lines to the textbox in the 'Whitelist'
+            tab.
+        </p>
+    </div>
+    <script type="module" src="ui.js"></script>
+</body>
+
+</html>

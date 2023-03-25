@@ -1,0 +1,24 @@
+{
+  "name": "redherring",
+  "version": "0.1.0",
+  "description": "Color your links.",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "ext": "web-ext"
+  },
+  "keywords": [
+    "phishing",
+    "color",
+    "browser"
+  ],
+  "author": "bhmt",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^11.0.0",
+    "web-ext": "^9.2.0",
+    "webpack-cli": "^5.0.2",
+    "wepack": "^0.0.1"
+  }
+}

@@ -1,0 +1,23 @@
+#rh_info_div {
+    position: fixed;
+    display: block;
+    background-color: #4b4b4b;
+    color: #fff;
+    padding: 4px 6px;
+    border-radius: 6px;
+    font-family: sans - serif;
+    font-size: 14px;
+    z-index: 999999;
+    pointer-events: none;
+    border: 1px solid #555;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+#rh_info_div .suspicious {
+    color: #E65447;
+    font-weight: bold;
+}
+
+#rh_info_div strong {
+    color: #f7a531;
+}
