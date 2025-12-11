@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Red Herring",
+    "name": "Red Herring Phishing Indicator",
     "version": "0.1.0",
     "description": "Indicate possible phishing links.",
     "icons": {
@@ -25,7 +25,6 @@
         }
     ],
     "permissions": [
-        "activeTab",
         "storage"
     ],
     "action": {
