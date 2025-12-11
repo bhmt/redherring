@@ -1,0 +1,11 @@
+{
+    "summary": {
+        "en-US": "Indicate possible phishing links when hovering over links."
+    },
+    "categories": [
+        "privacy-security"
+    ],
+    "version": {
+        "license": "GPL-3.0-only"
+    }
+}
