@@ -15,10 +15,11 @@ browser:
 	rm -rf dist
 	rm -rf public/icons
 	rm -f public/manifest.json
+	rm -f $(RUN_ARGS).redherring.zip
 	cp -r build/assets/$(RUN_ARGS)/icons public/icons
 	python build/build.py $(RUN_ARGS)
 	npm run build
-	[[ $(RUN_ARGS) == "mozilla" ]] && cp amo.metadata.json dist/amo.metadata.json
+	[[ $(RUN_ARGS) == "mozilla" ]] && cp amo.metadata.json dist/amo.metadata.json || true
 	(cd dist && zip -r ../$(RUN_ARGS).redherring.zip .)
 
 PHONY: ext
