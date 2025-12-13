@@ -6,6 +6,45 @@ class Popup {
         this.offset = 15;
     }
 
+    _fmt(url) {
+        if (url == undefined) {
+            return ''
+        }
+
+        try {
+            let host = url.hostname.split(".").slice(-2);
+            let h = `${host[0]}.${host[1]}`
+            return h
+        } catch (error) {
+            console.log("Could not format hostname:", url.hostname)
+        }
+
+        return ''
+    }
+
+    _url(href) {
+        let url = undefined;
+
+        try {
+            url = new URL(href);
+        } catch (error) {
+            console.log("Could not parse href to url:", href);
+        }
+
+        return url;
+    }
+
+    _window() {
+        let url = this._url(window.location.href);
+        return this._fmt(url);
+    }
+
+    _link(href) {
+        let url = this._url(href);
+        let linkFmt = this._fmt(url);
+        return [url, linkFmt];
+    }
+
     get() {
         return document.getElementById(this.id);
     }
@@ -14,21 +53,14 @@ class Popup {
         let popup = this.get();
         if (popup) return;
 
-        let url = undefined
-        try {
-            url = new URL(href);
-        } catch (error) {
-            console.log("Could not parse URL:", href);
-            return;
-        }
+        let [url, linkFmt] = this._link(href);
+        if (url === undefined) return;
+
+        let windowFmt = this._window();
+        if (linkFmt === windowFmt) return;
 
         let whitelist = await storage.get_whitelist();
-
-        let _host = url.hostname.split(".");
-        let domain = _host[_host.length - 2];
-        let tld = _host[_host.length - 1];
-
-        if (whitelist.includes(`${domain}.${tld}`)) {
+        if (whitelist.includes(linkFmt)) {
             this.destroy();
             return;
         }
